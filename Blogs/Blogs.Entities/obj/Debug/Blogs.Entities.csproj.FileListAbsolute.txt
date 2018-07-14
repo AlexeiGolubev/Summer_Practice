@@ -1,0 +1,6 @@
+C:\Users\Alex\source\repos\Blogs\Blogs.Entities\bin\Debug\Blogs.Entities.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.Entities\bin\Debug\Blogs.Entities.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.Entities\obj\Debug\Blogs.Entities.csprojAssemblyReference.cache
+C:\Users\Alex\source\repos\Blogs\Blogs.Entities\obj\Debug\Blogs.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Alex\source\repos\Blogs\Blogs.Entities\obj\Debug\Blogs.Entities.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.Entities\obj\Debug\Blogs.Entities.pdb

@@ -1,0 +1,9 @@
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\bin\Debug\Blogs.DAL.Interface.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\bin\Debug\Blogs.DAL.Interface.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\bin\Debug\Blogs.Entities.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\bin\Debug\Blogs.Entities.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\obj\Debug\Blogs.DAL.Interface.csprojAssemblyReference.cache
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\obj\Debug\Blogs.DAL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\obj\Debug\Blogs.DAL.Interface.csproj.CopyComplete
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\obj\Debug\Blogs.DAL.Interface.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.DAL.Interface\obj\Debug\Blogs.DAL.Interface.pdb

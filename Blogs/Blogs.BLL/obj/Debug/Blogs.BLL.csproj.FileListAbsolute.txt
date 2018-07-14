@@ -1,0 +1,13 @@
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.BLL.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.BLL.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.BLL.Interface.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.DAL.Interface.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.Entities.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.BLL.Interface.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.DAL.Interface.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\bin\Debug\Blogs.Entities.pdb
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\obj\Debug\Blogs.BLL.csprojAssemblyReference.cache
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\obj\Debug\Blogs.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\obj\Debug\Blogs.BLL.csproj.CopyComplete
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\obj\Debug\Blogs.BLL.dll
+C:\Users\Alex\source\repos\Blogs\Blogs.BLL\obj\Debug\Blogs.BLL.pdb
