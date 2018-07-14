@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blogs.Entities;
+using Blogs.Ninject;
+using Blogs.BLL.Interface;
+using Ninject;
 
 namespace Blogs
 {
@@ -12,7 +15,10 @@ namespace Blogs
     {
         static void Main(string[] args)
         {
-            var commentLogic = CommentContainer.CommentLogic;
+            //старая версия контейнера
+            //var commentLogic = CommentContainer.CommentLogic
+            NinjectComment.Resistration();
+            var commentLogic = NinjectComment.Kernel.Get<ICommentLogic>();
             //commentLogic.GetAllCommentsByBlogId(1);
 
             foreach (var comment in commentLogic.GetAllCommentsByBlogId(1))

@@ -9,3 +9,14 @@ C:\Users\Alex\source\repos\Blogs\Blogs.DAL\bin\Debug\Blogs.Entities.pdb
 C:\Users\Alex\source\repos\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.csproj.CopyComplete
 C:\Users\Alex\source\repos\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.dll
 C:\Users\Alex\source\repos\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.pdb
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\bin\Debug\Blogs.DAL.dll
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\bin\Debug\Blogs.DAL.pdb
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\bin\Debug\Blogs.DAL.Interface.dll
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\bin\Debug\Blogs.Entities.dll
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\bin\Debug\Blogs.DAL.Interface.pdb
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\bin\Debug\Blogs.Entities.pdb
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.csprojAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.csproj.CopyComplete
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.dll
+C:\Users\Alex\Documents\GitHub\Summer_Practice\Blogs\Blogs.DAL\obj\Debug\Blogs.DAL.pdb
