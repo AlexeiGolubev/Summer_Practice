@@ -20,6 +20,12 @@ namespace Blogs
             NinjectComment.Resistration();
             var commentLogic = NinjectComment.Kernel.Get<ICommentLogic>();
             //commentLogic.GetAllCommentsByBlogId(1);
+            //var id = commentLogic.AddComment(new Comment()
+            //{
+            //    Text = "Good",
+            //    BlogId = 1,
+            //    UserName = "Den",
+            //});
 
             foreach (var comment in commentLogic.GetAllCommentsByBlogId(1))
             {

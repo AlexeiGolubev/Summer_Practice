@@ -44,6 +44,9 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -52,7 +55,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blogs.BLL.Interface\Blogs.BLL.Interface.csproj">
+      <Project>{76c5be09-c744-4ecb-9edb-e54413711094}</Project>
+      <Name>Blogs.BLL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blogs.Entities\Blogs.Entities.csproj">
+      <Project>{c70f2377-dc9a-4ecc-a312-4a9f7f48d023}</Project>
+      <Name>Blogs.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blogs.Ninject\Blogs.Ninject.csproj">
+      <Project>{41E4F352-73E3-42B2-8634-C8F0A5C5887F}</Project>
+      <Name>Blogs.Ninject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,20 +14,38 @@ namespace Blogs.DAL
     public class BlogDao : IBlogDao
     {
         private readonly string _connectionString;
+
+        #region Constructor
         public BlogDao()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["default"].ConnectionString;
         }
+        #endregion
 
-        public int AddBlog(Blogs.Entities.Blog blog)
+        #region Methods
+        public int AddBlog(Blog blog)
         {
-            using (var conn = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
-                return 1;
+                try
+                {
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
 
+                    var name = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = blog.Name };
+                    command.Parameters.Add(name);
+                    var description = new SqlParameter("@Description", SqlDbType.NVarChar) { Value = blog.Description };
+                    command.Parameters.Add(description);
+
+                    connection.Open();
+                    return (int)(decimal)command.ExecuteScalar();
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
 
@@ -35,29 +53,47 @@ namespace Blogs.DAL
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var command = connection.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "DeleteBlogById";
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
+
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
 
         public void DeleteBlog(string Name)
         {
-            using (var conn = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
+                try
+                {
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
 
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
 
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
 
@@ -85,70 +121,151 @@ namespace Blogs.DAL
             }
         }
 
-        public IEnumerable<Blogs.Entities.Blog> GetBlog(string Name)
+        public IEnumerable<Blog> GetBlog(string Name)
         {
-            using (var conn = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
-
-                yield return new Blog
+                try
                 {
-                }; ;
-            }
-        }
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
 
-        public IEnumerable<Blogs.Entities.Blog> GetBlog()
-        {
-            using (var conn = new SqlConnection(_connectionString))
-            {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
 
-                yield return new Blog
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        yield return new Blog
+                        {
+                        };
+                    }
+                }
+                finally
                 {
-                }; ;
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
 
-        public IEnumerable<Blogs.Entities.Blog> SortBlogs()
+        public IEnumerable<Blog> GetBlog()
         {
-            using (var conn = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
-
-                yield return new Blog
+                try
                 {
-                }; ;
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
+
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        yield return new Blog
+                        {
+                        };
+                    }
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
 
-        public void UpdateBlog(int BlogId, Blogs.Entities.Blog blog)
+        public IEnumerable<Blog> SortBlogs()
         {
-            using (var conn = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
+                try
+                {
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
 
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
 
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        yield return new Blog
+                        {
+                        };
+                    }
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
 
-        public void UpdateBlog(string Name, Blogs.Entities.Blog blog)
+        public void UpdateBlog(int BlogId, Blog blog)
         {
-            using (var conn = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                var command = conn.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "";
+                try
+                {
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
 
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
 
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
             }
         }
+
+        public void UpdateBlog(string Name, Blog blog)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    var command = connection.CreateCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "";
+
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
+                    command.Parameters.Add(text);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                finally
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+            }
+        }
+        #endregion
     }
 }
