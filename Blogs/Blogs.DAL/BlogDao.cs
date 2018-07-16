@@ -31,7 +31,7 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
+                    command.CommandText = "AddBlog";
 
                     var name = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = blog.Name };
                     command.Parameters.Add(name);
@@ -57,10 +57,10 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
+                    command.CommandText = "DeleteBlogById";
 
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    var blogId = new SqlParameter("@BlogId", SqlDbType.Int) { Value = BlogId };
+                    command.Parameters.Add(blogId);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -81,10 +81,10 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
+                    command.CommandText = "DeleteBlogByName";
 
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    var name = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = Name };
+                    command.Parameters.Add(name);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -129,10 +129,10 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
+                    command.CommandText = "GetBlogByName";
 
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    var name = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = Name };
+                    command.Parameters.Add(name);
 
                     connection.Open();
                     var reader = command.ExecuteReader();
@@ -140,6 +140,10 @@ namespace Blogs.DAL
                     {
                         yield return new Blog
                         {
+                            BlogId = (int)reader["BlogId"],
+                            Name = (string)reader["Name"],
+                            CreationDate = ((DateTime)reader["CreationDate"]).ToString(),
+                            Description = (string)reader["Description"],
                         };
                     }
                 }
@@ -159,10 +163,7 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
-
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    command.CommandText = "GetAllBlogs";
 
                     connection.Open();
                     var reader = command.ExecuteReader();
@@ -170,6 +171,10 @@ namespace Blogs.DAL
                     {
                         yield return new Blog
                         {
+                            BlogId = (int)reader["BlogId"],
+                            Name = (string)reader["Name"],
+                            CreationDate = ((DateTime)reader["CreationDate"]).ToString(),
+                            Description = (string)reader["Description"],
                         };
                     }
                 }
@@ -189,10 +194,7 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
-
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    command.CommandText = "SortBlogs";
 
                     connection.Open();
                     var reader = command.ExecuteReader();
@@ -200,6 +202,10 @@ namespace Blogs.DAL
                     {
                         yield return new Blog
                         {
+                            BlogId = (int)reader["BlogId"],
+                            Name = (string)reader["Name"],
+                            CreationDate = ((DateTime)reader["CreationDate"]).ToString(),
+                            Description = (string)reader["Description"],
                         };
                     }
                 }
@@ -219,14 +225,14 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
+                    command.CommandText = "UpdateBlogById";
 
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    var blogId = new SqlParameter("@BlogId", SqlDbType.Int) { Value = BlogId };
+                    command.Parameters.Add(blogId);
+                    var name = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = blog.Name };
+                    command.Parameters.Add(name);
+                    var description = new SqlParameter("@Description", SqlDbType.NVarChar) { Value = blog.Description };
+                    command.Parameters.Add(description);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -247,14 +253,14 @@ namespace Blogs.DAL
                 {
                     var command = connection.CreateCommand();
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "";
+                    command.CommandText = "UpdateBlogByName";
 
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
-                    var text = new SqlParameter("@Text", SqlDbType.NVarChar) { Value = 1 };
-                    command.Parameters.Add(text);
+                    var oldName = new SqlParameter("@OldName", SqlDbType.NVarChar) { Value = Name };
+                    command.Parameters.Add(oldName);
+                    var name = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = blog.Name };
+                    command.Parameters.Add(name);
+                    var description = new SqlParameter("@Description", SqlDbType.NVarChar) { Value = blog.Description };
+                    command.Parameters.Add(description);
 
                     connection.Open();
                     command.ExecuteNonQuery();

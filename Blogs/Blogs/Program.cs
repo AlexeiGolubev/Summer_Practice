@@ -17,9 +17,15 @@ namespace Blogs
         {
             //старая версия контейнера
             //var commentLogic = CommentContainer.CommentLogic
-            NinjectComment.Resistration();
-            var commentLogic = NinjectComment.Kernel.Get<ICommentLogic>();
-            //commentLogic.GetAllCommentsByBlogId(1);
+
+
+            //Block of comment
+
+            //Connection
+            //NinjectComment.Resistration();
+            //var commentLogic = NinjectComment.Kernel.Get<ICommentLogic>();
+
+            //AddComment
             //var id = commentLogic.AddComment(new Comment()
             //{
             //    Text = "Good",
@@ -27,10 +33,70 @@ namespace Blogs
             //    UserName = "Den",
             //});
 
-            foreach (var comment in commentLogic.GetAllCommentsByBlogId(1))
-            {
-                Console.WriteLine($"{ comment.CommentId} { comment.Text} { comment.CreationDate} { comment.BlogId} { comment.UserName}");
-            }
+            //GetAllCommentsByBlogId
+            //foreach (var comment in commentLogic.GetAllCommentsByBlogId(1))
+            //{
+            //    Console.WriteLine($"{ comment.CommentId} { comment.Text} { comment.CreationDate} { comment.BlogId} { comment.UserName}");
+            //}
+            //Console.ReadKey();
+
+            ////Block of blog
+
+            //Connection
+            //NinjectBlog.Resistration();
+            //var blogLogic = NinjectBlog.Kernel.Get<IBlogLogic>();
+
+            //AddBlog
+            //var id = blogLogic.AddBlog(new Blog()
+            //{
+            //    Name = "Test blog",
+            //    Description = "New blog",
+            //});
+
+            //DeleteBlogById
+            /*blogLogic.DeleteBlog(7)*/
+            ;
+
+            //DeleteBlogByName
+            //blogLogic.DeleteBlog("Test blog");
+
+            ////GetBlogById
+            //var blog = blogLogic.GetBlog(2);
+            //Console.WriteLine($"{ blog.BlogId} { blog.Name} { blog.CreationDate} { blog.Description}");
+
+            //GetBlogByName
+            //foreach (var blog in blogLogic.GetBlog("III"))
+            //{
+            //    Console.WriteLine($"{ blog.BlogId} { blog.Name} { blog.CreationDate} { blog.Description}");
+            //}
+
+            //GetAllBlogs
+            //foreach (var blog in blogLogic.GetBlog())
+            //{
+            //    Console.WriteLine($"{ blog.BlogId} { blog.Name} { blog.CreationDate} { blog.Description}");
+            //}
+
+            //SortBlogs
+            //foreach (var blog in blogLogic.SortBlogs())
+            //{
+            //    Console.WriteLine($"{ blog.BlogId} { blog.Name} { blog.CreationDate} { blog.Description}");
+            //}
+
+            //GetBlogById
+            //blogLogic.UpdateBlog(1, new Blog()
+            //{
+            //    Name = "Test blog",
+            //    Description = "Update blog by Id",
+            //});
+
+            //GetBlogByName
+            //blogLogic.UpdateBlog("Test blog", new Blog()
+            //{
+            //    Name = "Test blog",
+            //    Description = "Update blog by Name",
+            //});
+
+
             Console.ReadKey();
         }
     }

@@ -53,7 +53,6 @@ namespace Blogs.DAL
 
         public IEnumerable<Comment> GetAllCommentsByBlogId(int BlogId)
         {
-            
             using (var connection = new SqlConnection(_connectionString))
             {
                 try
